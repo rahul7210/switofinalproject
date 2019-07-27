@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open Sans');
+
+/*This Can Be Ignored*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+p {
+  font-size: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0;
+}
+
+div {
+  background :white;
+  height:300px;
+  width:600px;
+  margin: 0 auto;
+}
+
+/*This is the Table Method */
+.table {
+  display: table;
+}
+
+.table p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.heading{
+    text-align:center;
+}
+  

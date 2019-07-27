@@ -1,0 +1,317 @@
+<html>
+<head>
+  <style>
+    
+    
+
+    body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color:#fff;
+    line-height:1.2;
+    margin:0;
+    background-image: url("../../assets/portfolio/12.jpg");
+    background-repeat:repeat;
+    background-size:cover;
+    font-size: 18px;
+  }
+  .info {
+    margin-bottom:50px;
+  }
+  .info p {
+    text-align:center;
+    color: #fff;
+    text-transform:none;
+    font-weight:500;
+    font-size:17px;
+    margin-top:2px
+  }
+  
+  .info i {
+    color:red;
+  }
+  .clearfix {clear:both;}
+  
+  textarea:focus, input:focus{
+      outline: none;
+  }
+  
+  h1 {
+    text-align:center; 
+    color: #fff;
+    text-shadow: 1px 1px 0px #222;
+    margin:50px 0px 0px 0px;
+    font-size:32px;
+    font-weight:500;
+  }
+  h2 {
+    font-weight:300;
+    font-size:27px;
+    margin:0px;
+    text-align:center;
+    text-transform:uppercase;
+    margin-top:50px;
+    padding-bottom:15px;
+  }
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+  
+  .container {
+    width:560px;
+    height:730px;
+    margin:auto;
+    display:block;
+    background-color:rgba(0,0,0,0.5);
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:50px;
+  }
+  .login-form {
+    position:relative;
+    border:2px solid rgba(255,255,255,0.2);
+    width:99%;
+    height:99%;
+    margin:auto;
+    display:block;
+    vertical-align:middle;
+    border-radius:15px;
+  }
+  .login-form hr.to-right {
+    width: 45%;
+    position:absolute;
+    right:30px;
+    border: 0px none;
+    height: 3px;
+    background-image: linear-gradient(to left,transparent, #F9E206);
+  }
+  .login-form hr.to-left {
+    width: 45%;
+    position:absolute;
+    left:30px;
+    border: 0px none;
+    height: 3px;
+    background-image: linear-gradient(to right,transparent, #F9E206);
+  }
+  
+  .container-login {
+    width:60%;
+    margin:auto;
+    display:block;
+    margin-top:30px;
+  }
+  textarea{width: 100%;
+    display: inline-block;
+    padding:0px 0px 5px 5px;
+    margin-top: 20px;
+    font-size:18px;}
+  
+  label {
+    width: 100%;
+    display: inline-block;
+    padding:0px 0px 5px 5px;
+    margin-top: 20px;
+    font-size:18px;
+  }
+  input {
+    border: 0px none;
+    width: 94%;
+    border-radius: 4px;
+    height: 25px;
+    padding: 5px 3%;
+    font-size:15px;
+    font-family: inherit;
+    color:#222;
+  }
+  button {
+      width:100%;
+      background-color:rgba(74,129,51,0.4);
+      border:2px solid #6FC149;
+      color:#fff;
+      border-radius:5px;
+      height:50px;
+      text-transform:uppercase;
+      font-size:19px;
+      cursor:pointer;
+      transition:all 0.3s;
+    margin-top: 20px;
+  }
+  
+  .login-footer {
+      margin-top:50px;
+  }
+  .login-footer a {
+      font-size: 16px;
+      margin:5px 0px;
+      text-align:center;
+      color:rgba(255,255,255,0.4);
+      font-weight:400;
+      line-height:1.4;
+      display: block;
+      transition:all 0.2s;
+  }
+  .login-footer a:hover {
+      color:rgba(255,255,255,0.7);
+  }
+  .login-footer i {
+      padding:0px 6px 0px 0px;
+  }
+  
+  .check {
+      padding: 20px 0px;
+  }
+  .check label {
+      display:inline;
+      margin-top:5px;
+      position: relative;
+      top: 5px;
+  }
+  .check p {
+      display:inline;
+      margin-left: 8px;
+  }
+  .checkbox {
+      display: none;
+  }
+  
+  .checkbox:checked + svg .path-moving {
+      -webkit-transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s cubic-bezier(.3,.8,.6,1.5);
+      transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s cubic-bezier(.3,.8,.6,1.5);
+      stroke-dasharray: 25 90;
+      stroke-dashoffset: 0;
+  }
+  
+  .path-moving,
+  .path-back {
+      fill: none;
+      stroke: #64A546;
+      stroke-width: 3px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+  }
+  
+  .path-moving {
+      -webkit-transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
+      transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
+      stroke: #ffffff;
+      stroke-dasharray: 110;
+      stroke-dashoffset: -32;
+  }
+
+
+
+    
+    </style>
+</head>
+<body>
+
+<div *ngFor='let obj of arr' >
+<div class="info"><a href="#" target="_blank"><p>  <i class="fa fa-heart"></i>  </p></a></div>
+
+     
+<div class="container">
+  <div class="login-form">
+      
+      <h2>Details Update form</h2>
+      <hr class="to-right">
+      <hr class="to-left">
+      
+          <div class="container-login">
+      
+              <label>name</label>
+              <input type="text"  class="form-control" id="inputName" [(ngModel)]="obj.name" name="name" placeholder="{{obj.name}}"/>
+          
+              <label>email</label>
+              <input  type="email" class="form-control" id="inputEmail" [(ngModel)]="obj.email"  name="email" placeholder= "{{obj.email}}" />	
+              <label>canteen name</label>
+              <input type="text" class="form-control" id="inputCannem" [(ngModel)]="obj.canteenname" name="canteenname" placeholder="{{obj.canteenname}}" />	
+
+              <label>phone</label>
+              <input type="number"  class="form-control"  id="inputPhone" [(ngModel)]="obj.phone" name="phone" placeholder="{{obj.phone}}"/>
+              <label>password</label>
+              <input type="text" class="form-control"  id="inputPassword" [(ngModel)]="obj.password" placeholder="{{obj.password}}" />	
+              
+              <label>Address</label>
+              <textarea class="form-control" [(ngModel)]="obj.address"  id="inputAddress" name="address" placeholder="{{obj.address}}"></textarea>
+              
+          
+          
+              <button   type="submit" class="btn btn-primary" (click)="up_data(obj.name,obj.email,obj.canteenname,obj.phone,obj.password,obj.address,obj._id)" >Update</button>
+              <br>
+              <br>
+              <!-- <button   type="submit" class="btn btn-primary" (click)="delData(obj._id)" >Delete</button> -->
+        
+              
+
+              <!-- <a [routerLink]="['/login']">  <button type="submit" class="btn btn-primary" (click)="addData()" >Create Account</button></a> -->
+              <a [routerLink]="['/login']">  <button type="submit" class="btn btn-primary"  >EXIT</button></a>
+              
+              
+          </div>
+  
+  </div>
+</div> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- shobhit  -->
+
+
+
+<!-- <div *ngFor='let obj of arr' style="background-image: url(../../assets/images/bgjoin.jpg); background-repeat: no-repeat;background-size: cover;">
+
+  <div class="registration">
+  <div class="col-md-10"> 
+      <br> <br> <br> <br> <br>
+      <form style="margin-left:5.5cm;">
+              <h2 style="margin-left: 1.3cm;">UPDATE THE REQUIRED FIELDS</h2> 
+              <br>        
+              <label for="inputName">Name</label>
+              <input type="text" class="form-control" [(ngModel)]="obj.name" name="name"  placeholder={{obj.name}}>  
+         <br> 
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="obj.email" placeholder={{obj.email}} name="email">
+         <br>     
+                  <label for="inputPassword4">Password</label>
+                   <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="obj.password" placeholder={{obj.password}} name="password">
+              <div class="row">
+              <div class="col-md-4" style="margin-left: 2.0cm;">
+                  <br>
+                  <label for="inputWeight">Weight</label>
+                  <input type="text" class="form-control" id="inputWeight" [(ngModel)]="obj.weight" name="weight" placeholder={{obj.weight}}>
+              </div>
+              <div class="col-md-4">
+                  <br>
+                  <label for="inputHeight">Height</label>
+                  <input type="text" class="form-control" id="inputHeight" name="height" [(ngModel)]="obj.height"  placeholder={{obj.height}}>
+              </div>
+              </div>
+              <br>
+          <button   type="submit" class="btn btn-primary" (click)="up_data(obj.name,obj.email,obj.password,obj.weight,obj.height,obj._id)" style="margin-left: 4.7cm;">Update</button>
+      <br>
+      <br>
+      <button   type="submit" class="btn btn-primary" (click)="delData(obj._id)" style="margin-left: 4.7cm;">Delete</button>
+      </form>
+  
+  </div>
+  </div>
+  
+  </div> -->
+  </body>
+  </html>

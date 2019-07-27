@@ -1,0 +1,164 @@
+<!-- <header id="header">
+    <nav class="navbar navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+          <a class= "navbar-brand" href="/home" >Swito</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right"> -->
+                <!-- <nav class='navbar navbar-expand navbar-light bg-light'> -->
+                        <!-- <nav id="main-navbar"> -->
+                         <!-- <ul  ></ul>class="nav nav-pills"> -->
+          <!-- <ul class="nav navbar-nav"> -->
+              
+          <!-- <li><a class="nav-link"   [routerLink]="['/home']"><b>Home</b></a></li> -->
+            <!-- <li><a class ="nav-link" [routerLink]="['/order']"><b>Order</b></a></li> -->
+            <!-- <li><a class ="nav-link" [routerLink]="['/login']"><b>Login</b></a></li> -->
+            <!-- <li ><a class ="nav-link" [routerLink]="['/about']"><b>About</b></a></li> -->
+            <!-- <li ><a href="#contact"><b>Contact</b></a></li> -->
+            
+          <!-- </ul> -->
+          
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </nav> -->
+<html>
+
+<head>
+<style>
+  * {
+    font-family: sans-serif;
+    font-size: 9pt;
+}
+nav {
+    padding: 0;
+    font-size:15;
+}
+.container {
+    width: 85%;
+    margin: 30px auto 0 auto;
+    position: relative;
+    
+}
+#links {
+    padding: 0;
+    overflow: auto;
+    margin: 0 auto;
+    list-style: none;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 15;
+}
+li {
+    list-style-type: none;
+    float: left;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+}
+#links li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 15;
+}
+.progressBar {
+    height: 5px;
+    overflow: hidden;
+    background-color: lightgray;
+    left: 0;
+    right: 0;
+}
+#progress {
+    width: 20%;
+    background-color: red;
+    height: 100%;
+    transition: width 0.5s;
+}
+.active a {
+    background-color: black;
+    color: white !important;
+    transition: background-color 0.5s;
+}
+
+  </style>
+  <script>
+  var progress = document.getElementById("progress"),
+    navBar = document.getElementById("links"),
+    linkCount = document.getElementsByTagName("li"),
+    oneLink = navBar.offsetWidth / linkCount.length;
+
+progress.offsetWidth = Math.ceil(oneLink) + "px";
+linkCount[0].classList.add("active");
+
+function red(pos, link) {
+    for (var i = 0; i < linkCount.length; i++) {
+        linkCount[i].classList.remove("active");
+    }
+    progress.style.width = oneLink * pos + "px";
+    link.classList.add("active");
+}
+
+// RELOAD ON RESIZE
+window.onresize = function() {
+    location.reload();
+};
+
+  </script>
+</head>
+<body>
+    <div class="navbar-header">
+        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> -->
+     <a class="navbar-brand" href="index.html"><img src="../../assets/Swito.jpg" margin-top="6px" vspace="1"></a>
+      </div>
+
+    <div class="container">
+      <nav>
+          <ul id="links">
+              <li onclick="red(1, linkCount[0])">
+                <a class="nav-link"   [routerLink]="['/home']"><b><h2>'</h2></b></a>
+              </li>
+              <li onclick="red(1, linkCount[1])">
+                  <a class="nav-link"   [routerLink]="['/home']"><b>Home</b></a>
+                </li>
+              <li onclick="red(2, linkCount[1])">
+                <a class ="nav-link" [routerLink]="['/cart']"><b>Order</b></a>
+              </li>
+              <!-- <div class="dropdown">
+                <a [routerLink]="['/login']" class="nav-link">Login</a>
+                   <div class="dropdown-content">
+                     <a [routerLink]="['/login']">Canteen Login</a>
+                     <a [routerLink]="['/viewitems']">Developer Login</a>
+                     
+                    
+                  </div>
+                </div> -->
+              <li onclick="red(3, linkCount[2])">
+                <a class ="nav-link" [routerLink]="['/login']"><b>Login</b></a>
+              </li>
+              <li onclick="red(4, linkCount[3])">
+                <a class ="nav-link" [routerLink]="['/about']"><b>About</b></a>
+              </li>
+              <!-- <li onclick="red(4, linkCount[3])">
+                <a class ="nav-link" [routerLink]="['/join']"><b>Join</b></a>
+              </li> -->
+              
+          </ul>
+          <div class="progressBar">
+              <div id="progress"></div>
+          </div>
+      </nav>
+  </div>
+  </body>

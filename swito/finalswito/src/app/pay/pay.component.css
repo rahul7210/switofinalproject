@@ -1,0 +1,246 @@
+:root {
+    --theme-color: skyblue;
+    --theme-color-idle: lightgrey;
+  }
+  
+  body {
+    display: grid;
+    grid-template-columns: 1fr 700px 1fr;
+    grid-template-rows: 2fr auto 3fr;
+    height: 100vh;
+    font-family: Avenir Next, Gill Sans MT, sans-serif;
+  }
+  
+  .wrapper {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+  }
+  
+  section {
+    --primary-color: var(--theme-color-idle);
+    
+    width: 50%;
+    padding: 1em;
+    background-color: var(--primary-color);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    opacity: 0.4;
+    transition: all 400ms ease-out;
+  }
+  
+  section.active {
+      --primary-color: var(--theme-color);
+      
+      -webkit-transform: scale(1);
+      
+              transform: scale(1);
+      opacity: 1;
+      z-index: 1;
+    }
+  
+  section.qr-code {
+      -webkit-transform-origin: right center;
+              transform-origin: right center;
+    }
+  
+  section.qr-code.active {
+        -webkit-transform: translateX(30%);
+                transform: translateX(30%);
+      }
+  
+  section.traditional {
+      -webkit-transform-origin: left center;
+              transform-origin: left center;
+    }
+  
+  section.traditional.active {
+        -webkit-transform: translateX(-30%);
+                transform: translateX(-30%);
+      }
+  
+  form label,
+    form input[type=email],
+    form input[type=password] {
+      display: block;
+    }
+  
+  form label {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-variant: all-small-caps;
+    }
+  
+  form input[type=email],
+    form input[type=password],
+    form button {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  
+  form input[type=email],
+    form input[type=password] {
+      width: 100%;
+      border-bottom: 2px solid black;
+    }
+  
+  form button {
+      width: 100%;
+      margin-top: 3rem;
+      padding: 0.5em 1em;
+      background-color: var(--primary-color);
+      -webkit-filter: brightness(0.7);
+              filter: brightness(0.7);
+      font-size: inherit;
+    }
+  
+  .qr-code svg {
+    width: 100%;
+  }
+  .jumbotron2 {
+    background-color: #a6c0ea;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;
+  }
+  
+  .title {
+    color: #000099;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: 20px;
+  }
+  
+  .head2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .head3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    text-align: center;
+    padding-left: 30px;
+    margin-top: 30px;
+  }
+  
+  .head4 {
+    padding: 30px;
+    text-align: center;
+  }
+  .medium-navy-border {
+    border-color: #000099;
+    border-width: 8px;
+    border-style: solid;
+  }
+  
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+  
+  .lightback {
+    background-color: #ccccff;
+  }
+  
+  .bodytext {
+    text-align: left;
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  
+  .bodytext2 {
+    text-align: center;
+    font-size: 15px;
+  }
+  .bodytext3 {
+    text-align: center;
+    font-size: 15px;
+    padding-top: 30px;
+  }
+  
+  .intro-divider {
+    margin-top: 50px;
+    width: 90%;
+    border-top: 1px solid black;
+  }
+  .alert {
+    position: relative;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.5em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    width: calc(100% - 100px);
+  }
+
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-color: #EFEFEF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fragment {
+    width: 320px;
+    height: 480px;
+    display: block;
+    position: relative;
+    background-color: #fff;
+  }
+  .fragment_menu {
+    width: 100%;
+    height: 50px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #DEDEDE;
+    background-color: #DEDEDE;
+  }
+  .fragment_menu i {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .fragment_content {
+    width: 100%;
+    height: calc(480px - 90px);
+    padding: 6px 18px;
+    border-bottom: 1px solid #DEDEDE;
+    overflow-y: scroll;
+    color: #666;
+    font-size: 13px;
+  }
+  .fragment_button {
+    width: 100%;
+    max-height: 40px;
+    align-content: center;
+    width: 1500;
+  }
+  .fragment_button .btn {
+    border-radius: 0;
+    border: 0;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  
+  .raa{
+    background-color: #EFEFEF;
+    color: #EFEFEF;
+
+  }
+  

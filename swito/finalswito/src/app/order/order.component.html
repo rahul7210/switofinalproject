@@ -1,0 +1,119 @@
+<app-header></app-header>
+
+
+<html>
+    <head>
+        <style>
+            #h{
+                text-align: center;
+            }
+            #list{
+                font-size: 0.88cm;
+                color: rgb(250, 245, 245);
+                align-items: center;
+            }
+            * {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 1.75vw;
+}
+
+body {
+	padding: 2rem;
+	font: normal 1rem/1.25 Verdana, sans-serif;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+    
+    background-image: url("../../assets/menu.jpg");
+	color:white;
+}
+
+@media screen and (max-width : 480px) {
+	body {
+		font-size:  1.5rem;
+	}
+}
+
+table {
+	display: flex;
+	flex-flow: column nowrap;
+	line-height: 1.25;
+	border: 0;
+}
+
+caption {
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-weight: 900;
+	color:white;
+	caption-side: top;
+}
+
+caption span {
+	font-size: 1.25rem;
+	font-weight: 300;
+	color: #A52A2A;
+}
+
+tr {
+	display: flex;
+}
+
+tr:nth-of-type(odd) {
+    background-color:wheat;
+    color:black;
+}
+
+th {
+	font-weight: 700;
+	background-color: wheat;
+	color:black;
+}
+
+th,
+td {
+	display: flex;
+	flex: 1 0; 
+	align-items: center;
+	justify-content: center;
+    font-size: 5;
+	padding: 0.5rem 0.1rem;
+	border: 1px solid #BFBFBF;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class ="container">
+        <div id ="h">
+            
+            <h1>Tasty snacks just few steps away</h1>
+            <h3>Select Canteen</h3>
+        </div>
+        </div>
+        <div class="container"> 
+            <div id="list">
+                <table>
+                    <tr>
+                        <th>CANTEEN NAME</th>
+                        <th>ADDRESS</th>
+                        </tr>
+                        <tr *ngFor="let obj of arr">
+                            
+                            <td>{{obj.canteenname}} </td>
+                            <td>{{obj.address}}    <a [routerLink]="['/cart']"><button (click)="(obj._id)">order</button></a> </td>
+                        </tr>
+                        
+                                                
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+<app-footer></app-footer>

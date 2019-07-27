@@ -1,0 +1,289 @@
+<html>
+    <head>
+         <script>
+
+
+
+     </script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    </head>
+
+<body ng-app="">
+
+
+<form name="demo-form" #regForm='ngForm' (ngSubmit)="Register(refForm)" >
+    	<div class="field">
+			<h1>Order Items</h1>
+        </div>
+        <div class="field">
+                <label>Choose Item Name<i>*</i></label>
+				<!-- <input type="text"  [(ngModel)]="item" name="item"  data-rule="required|phone"/> -->
+				
+				<select data-rule="required" [(ngModel)]="item" name="item" ng-minlength=3 item required >
+						<!-- <option value="None">--No select--</option> -->
+						<option value="{{obj.name}}" *ngFor="let obj of arr">{{obj.name}}</option>
+	
+						
+					</select>
+
+
+
+
+			</div>
+			
+           
+            
+
+
+            <div class="field" >
+                    <label>Enter the  Item quantity<i>*</i></label>
+				<!-- <input type="text" [(ngModel)]="quantity"  name="quantity" data-rule="required|phone" /> -->
+			   
+
+
+				<select data-rule="required" [(ngModel)]="quantity" name="quantity" data-default="3" ng-minlength=1 quantity required>
+						<!-- <option value="None">--No select--</option> -->
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						
+						
+					</select>
+					
+				
+
+
+			</div>
+                
+	
+			
+
+			<div class="field" >
+                    <label>Price<i>*</i></label>
+				<!-- <input type="text" [(ngModel)]="quantity"  name="quantity" data-rule="required|phone" /> -->
+			   
+
+
+				<select data-rule="required" [(ngModel)]="quantity" name="quantity" data-default="3" ng-minlength=1 quantity required>
+
+						<option value="1">
+
+								<div class="field">
+										<!-- <label>price<i>*</i></label> -->
+										<div ng-if="quantity == 5">
+												<!-- <label>10</label> -->
+												</div>
+												<div ng-if="quantity== 1">
+												<label>10</label>
+												</div>
+									
+									</div>
+					
+					</option>	
+					<option value="2">
+
+			<div class="field">
+					<!-- <label>price<i>*</i></label> -->
+					<div ng-if="quantity == 5">
+							<!-- <label>10</label> -->
+							</div>
+							<div ng-if="quantity== 2">
+							<label>20</label>
+							</div>
+				
+				</div>
+
+</option>
+<option value="3">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 3">
+						<label>30</label>
+						</div>
+			
+			</div>
+
+</option>
+
+<option value="4">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 4">
+						<label>40</label>
+						</div>
+			
+			</div>
+
+</option>
+<option value="5">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 5">
+						<label>50</label>
+						</div>
+			
+			</div>
+
+</option>
+
+<option value="6">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 3">
+						<label>60</label>
+						</div>
+			
+			</div>
+
+</option>
+
+<option value="7">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 3">
+						<label>70</label>
+						</div>
+			
+			</div>
+
+</option>
+<option value="8">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 3">
+						<label>80</label>
+						</div>
+			
+			</div>
+
+</option>
+
+<option value="9">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 3">
+						<label>90</label>
+						</div>
+			
+			</div>
+
+</option>
+
+<option value="10">
+
+		<div class="field">
+				<!-- <label>price<i>*</i></label> -->
+				<div ng-if="quantity == 5">
+						<!-- <label>10</label> -->
+						</div>
+						<div ng-if="quantity== 3">
+						<label>100</label>
+						</div>
+			
+			</div>
+
+</option>
+
+
+
+</select>
+			</div>
+
+
+
+
+
+		<div class="field">
+			<label>Enter the valid PayTm number<i>*</i></label>
+			<input type="text"  [(ngModel)]="phone" name="phone" data-rule="required|phone" ng-minlength=10 phone required/>
+		</div>
+
+
+		<div class="field">
+			<!-- <div class="coll">
+				<label>Choose a color<i>*</i></label>
+
+				<label for="radio-1">
+					<span>Red</span>
+					<input type="radio" id="radio-1" value="red" name="color" data-rule="required"/>
+				</label>
+
+				<label for="radio-2">
+					<span>Green</span>
+					<input type="radio" id="radio-2" value="green" name="color" data-rule="required"/>
+				</label>
+
+				<label for="radio-3">
+					<span>Blue</span>
+					<input type="radio" id="radio-3" value="blue" name="color" data-rule="required"/>
+				</label>
+			</div> -->
+
+			<div class="coll">
+				<label>Payment Option<i>*</i></label>
+
+				<select data-rule="required" [(ngModel)]="payment" name="payment" data-default="3" ng-minlength=1 payment required>
+					
+					<option value="PayTm">PayTm</option>
+					<option value="Cash">Cash</option>
+					<!-- <option value="2">Amsterdam</option>
+					<option value="3">Las Vegas</option>
+					<option value="4">New Jersey</option> -->
+				</select>
+			</div>
+
+		</div>
+
+
+		<div class="field submit">
+        	
+        	<!-- <label for="agree">
+        		<span>Do you want to place order<i>*</i></span>
+        		<input type="checkbox" name="agree" id="agree" data-rule="required"/>
+			</label> -->
+
+            <input type="submit"  value="Submit form" (click)="addData()"  [disabled]="!regForm.valid"/>
+        
+		</div>
+
+    </form>
+    </body>
+	</html>
+	

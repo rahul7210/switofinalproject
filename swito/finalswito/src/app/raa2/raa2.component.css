@@ -1,0 +1,215 @@
+* { 
+    margin: 0; 
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background:#e74c3c;
+    display: flex;
+    flex-flow: wrap row;
+    height:  45vh;
+  } 
+  
+  .card {
+    width: 260px;
+    height : 260px; 
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border : 10px solid #fff;
+    margin: auto;  
+  }
+  
+  .card__contentimage img {
+    opacity: 1;
+    transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+    transform: scale(1);
+    filter: grayscale(0%);
+    width:240px;
+    min-height: 240px;
+  }
+  
+  .card:hover .card__contentimage img {	
+    transform: scale(1.2);
+    filter: grayscale(100%);
+    opacity: 0.5; 
+  }
+  
+  .card__contentimage {
+    position: absolute;
+    top :0;
+    z-index: 0;
+    height: 240px;
+    width: 240px;
+    overflow: hidden;
+  }
+  
+  .card__square {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 0px;
+    left : 0px;
+    border-left: 60px solid #606060;
+    border-right: 60px solid #303030;
+    border-bottom: 60px solid #101010;
+    border-top: 60px solid #909090;
+    display: inline-block;
+    opacity: 0;
+    margin: 0; 
+    padding:0;
+    transform: translate(-120px, -120px);
+    transition : opacity 0.3s, transform 0.3s;
+    z-index: 10;
+  }
+  
+  .card:hover .card__square {
+    transform: translate(0px, 0px);    
+    opacity: 0.5;
+  } 
+  
+  
+  .card__square2 {
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid #606060;
+    border-left: 60px solid #303030;
+    border-bottom: 60px solid #101010;
+    border-top: 60px solid #909090;
+    position: absolute;
+    top: 0px;
+    left: 120px;
+    transform: translate(120px, -120px); 
+    transition : opacity 0.3s, transform 0.3s;
+    opacity: 0.5;
+    margin: 0; 
+    padding:0;
+    z-index: 10;
+  }
+  
+  .card:hover .card__square2 {
+    transform: translate(0px, 0px);    
+    opacity: 0.5;
+  } 
+  
+  
+  .card__square3 {
+    width: 0px;
+    height: 0px;
+    border-left: 60px solid #606060;
+    border-right: 60px solid #303030;
+    border-top: 60px solid #101010;
+    border-bottom: 60px solid #909090;
+    position: absolute;
+    bottom: 0px;
+    left : 0px;
+    transform: translate( -120px, 120px); 
+    transition : opacity 0.3s, transform 0.3s;
+    opacity: 0.5;    
+    opacity: 0.5;
+    margin: 0; 
+    padding:0;
+    z-index: 10;
+  }
+  
+  
+  .card:hover .card__square3 {
+    transform: translate(0px, 0px);    
+    opacity: 0.5;
+  } 
+  
+  
+  .card__square4 {
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid #606060;
+    border-left: 60px solid #303030;
+    border-top: 60px solid #101010;
+    border-bottom: 60px solid #909090;
+    position: absolute;
+    bottom : 0px;
+    right : 0px;
+    transform: translate( 120px, 120px); 
+    transition : opacity 0.3s, transform 0.3s;
+    opacity: 0.5;    
+    opacity: 0.5;
+    margin: 0; 
+    padding:0;
+    z-index: 10;
+  }
+  
+  .card:hover .card__square4 {
+    transform: translate(0px, 0px);    
+    opacity: 0.5;
+  } 
+  
+  .card__squareCenter {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top : 70px;
+    left : 70px;
+    background: #fff;
+    z-index: 11;
+    transform-origin: 50px 50px;
+    opacity: 0;
+    transform: rotate(200deg)  scale(0.5) translate(-20px, 600px);
+    transition: transform 0.6s,  opacity 0.3s;
+  }
+  
+  .card:hover .card__squareCenter {
+    transform: rotate(45deg) scale(1) translate(0,0);
+    opacity: 1;
+  }
+  
+  
+  .card__btn {
+    text-align: center;
+    display: inline-block;
+    width: 120px;
+    position: absolute;
+    top : 0px;
+    left: 0px;
+    z-index: 11;	
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #303030;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+    transition-delay: 0.3s, 0ms;
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: rotate(-45deg) translate(-35px, 20px);
+  }
+  
+  
+  .card:hover .card__btn {
+    opacity: 1;
+  }
+  
+  .red {
+    background: red;
+  }
+  
+  .green {
+    background: green;
+  }
+  
+  .yellow {
+    background: yellow;
+  }
+  
+  .lightblue{
+    background: lightblue;
+  }
+  
+  .blue {
+    background: blue;
+  }
+  
+  .pink {
+    background: pink;
+  }

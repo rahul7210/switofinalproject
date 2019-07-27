@@ -1,0 +1,15 @@
+input.ng-invalid.ng-touched
+{
+    border-color:red;
+    background-color:red;
+}
+ input.ng-pristine {
+            background-color:yellow;
+        }
+
+       
+
+        input.ng-touched.ng-valid {
+            background-color:cyan;
+        }
+        

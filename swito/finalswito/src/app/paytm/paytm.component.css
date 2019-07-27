@@ -1,0 +1,101 @@
+:root {
+    --theme-color: skyblue;
+    --theme-color-idle: lightgrey;
+  }
+  
+  body {
+    display: grid;
+    grid-template-columns: 1fr 700px 1fr;
+    grid-template-rows: 2fr auto 3fr;
+    height: 100vh;
+    font-family: Avenir Next, Gill Sans MT, sans-serif;
+  }
+  
+  .wrapper {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+  }
+  
+  section {
+    --primary-color: var(--theme-color-idle);
+    
+    width: 50%;
+    padding: 1em;
+    background-color: var(--primary-color);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    opacity: 0.4;
+    transition: all 400ms ease-out;
+  }
+  
+  section.active {
+      --primary-color: var(--theme-color);
+      
+      -webkit-transform: scale(1);
+      
+              transform: scale(1);
+      opacity: 1;
+      z-index: 1;
+    }
+  
+  section.qr-code {
+      -webkit-transform-origin: right center;
+              transform-origin: right center;
+    }
+  
+  section.qr-code.active {
+        -webkit-transform: translateX(30%);
+                transform: translateX(30%);
+      }
+  
+  section.traditional {
+      -webkit-transform-origin: left center;
+              transform-origin: left center;
+    }
+  
+  section.traditional.active {
+        -webkit-transform: translateX(-30%);
+                transform: translateX(-30%);
+      }
+  
+  form label,
+    form input[type=email],
+    form input[type=password] {
+      display: block;
+    }
+  
+  form label {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-variant: all-small-caps;
+    }
+  
+  form input[type=email],
+    form input[type=password],
+    form button {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  
+  form input[type=email],
+    form input[type=password] {
+      width: 100%;
+      border-bottom: 2px solid black;
+    }
+  
+  form button {
+      width: 100%;
+      margin-top: 3rem;
+      padding: 0.5em 1em;
+      background-color: var(--primary-color);
+      -webkit-filter: brightness(0.7);
+              filter: brightness(0.7);
+      font-size: inherit;
+    }
+  
+  .qr-code svg {
+    width: 100%;
+  }
